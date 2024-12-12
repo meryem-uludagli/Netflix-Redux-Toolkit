@@ -20,6 +20,7 @@
     "react-native-safe-area-context": "^5.0.0",
     "react-native-screens": "^4.3.0",
     "react-native-svg": "^15.10.1",
+    "react-native-swiper": "^1.6.0",
     "react-redux": "^9.2.0",
     "redux": "^5.0.1"
   },
