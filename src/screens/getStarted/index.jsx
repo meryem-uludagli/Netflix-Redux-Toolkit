@@ -1,5 +1,5 @@
-import {Image, Text, View, Button} from 'react-native';
-import GetStart from '../../theme/stylesStart';
+import {Image, Text, View} from 'react-native';
+import GetStart from '../../styles/getStart';
 import Swiper from 'react-native-swiper';
 import StartButton from '../../components/Button';
 
@@ -33,7 +33,7 @@ const StartScreen = () => {
       </Swiper>
 
       <View>
-        <StartButton />
+        <StartButton GETSTARTED={true} />
       </View>
     </View>
   );

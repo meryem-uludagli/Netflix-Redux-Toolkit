@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from './colors';
+import {colors} from '../theme/colors';
 
 const GetStart = StyleSheet.create({
   container: {
@@ -25,9 +25,6 @@ const GetStart = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     marginTop: 5,
-  },
-  btn: {
-    backgroundColor: 'red',
   },
 });
 

@@ -1,13 +1,21 @@
-import {Button, StyleSheet} from 'react-native';
+import {Button} from 'react-native';
 import React from 'react';
-import {colors} from '../theme/colors';
-import {SIGNIN} from '../utils/routes';
+import {SIGNIN, WATCHLIST} from '../utils/routes';
 import {useNavigation} from '@react-navigation/native';
+import DefaultStyle from '../styles/defaultStyles';
 
-const StartButton = () => {
+const StartButton = ({GETSTARTED}) => {
   const navigation = useNavigation();
   return (
-    <Button title="GET START" onPress={() => navigation.navigate(SIGNIN)} />
+    <Button
+      style={DefaultStyle.btn}
+      title={GETSTARTED ? 'GET START' : 'Sign In'}
+      onPress={() => {
+        GETSTARTED
+          ? navigation.navigate(SIGNIN)
+          : navigation.navigate(WATCHLIST);
+      }}
+    />
   );
 };
 
