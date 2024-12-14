@@ -3,13 +3,18 @@ import {Text, View, Image, FlatList, TouchableOpacity} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import watchStyle from '../../styles/watchStyle';
 import {Edit2} from 'iconsax-react-native';
+import {useNavigation} from '@react-navigation/native';
+import {ADDNEWLIST, TAB} from '../../utils/routes';
 
 const WatchlistScreen = () => {
+  const navigation = useNavigation();
   const profiles = useSelector(state => state.profiles.profiles);
   const dispatch = useDispatch();
 
   const renderProfile = ({item}) => (
-    <TouchableOpacity style={watchStyle.profileContainer}>
+    <TouchableOpacity
+      style={watchStyle.profileContainer}
+      onPress={() => navigation.replace(TAB)}>
       <Image source={item.image} style={watchStyle.profileImage} />
       <Text style={watchStyle.profileText}>{item.name}</Text>
     </TouchableOpacity>
@@ -17,7 +22,10 @@ const WatchlistScreen = () => {
 
   return (
     <View style={watchStyle.container}>
-      <Edit2 style={watchStyle.icon} />
+      <Edit2
+        style={watchStyle.icon}
+        onPress={() => navigation.navigate(ADDNEWLIST)}
+      />
 
       <View style={watchStyle.headerContainer}>
         <Image
