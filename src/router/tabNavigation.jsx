@@ -7,10 +7,15 @@ import {DOWNLOADS, HOME, NETHOT, SEARCH} from '../utils/routes';
 import TabBarIcon from '../components/router/tabIcon';
 
 const Tab = createBottomTabNavigator();
+
 function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: 'black',
+        },
         tabBarIcon: ({focused, color, size}) => (
           <TabBarIcon
             focused={focused}
@@ -19,6 +24,8 @@ function TabNavigator() {
             route={route}
           />
         ),
+        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: 'red',
       })}>
       <Tab.Screen name={HOME} component={Home} />
       <Tab.Screen name={NETHOT} component={NewHot} />
@@ -27,4 +34,5 @@ function TabNavigator() {
     </Tab.Navigator>
   );
 }
+
 export default TabNavigator;
