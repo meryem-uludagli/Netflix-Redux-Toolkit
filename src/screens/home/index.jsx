@@ -1,13 +1,14 @@
-import {FlatList, Image, Text, View} from 'react-native';
+import {ScrollView, Image, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
-import HomePage from '../../styles/homePage';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   getCategories,
   getTopRatedMovies,
 } from '../../store/actions/movieActions';
-import CategoryItem from '../../components/movie/categoryItem';
 import {Add, InfoCircle, Play} from 'iconsax-react-native';
+import Categories from '../../widgets/categories';
+import HomePage from '../../styles/homePage';
+import Sections from '../../widgets/sections';
 
 const Home = () => {
   const {topRatedMovies, categories} = useSelector(state => state.movies);
@@ -18,16 +19,17 @@ const Home = () => {
   }, []);
 
   return (
-    <View style={HomePage.container}>
-      <FlatList
-        horizontal
-        data={categories}
-        renderItem={({item}) => <CategoryItem item={item} />}
-      />
+    <ScrollView contentContainerStyle={HomePage.scrollContainer}>
+      {/* Kategoriler */}
+      <Categories />
+
+      {/* Film Afişi */}
       <Image
         source={require('../../assets/images/film.jpg')}
         style={HomePage.image}
       />
+
+      {/* İkonlar */}
       <View style={HomePage.iconContainer}>
         {/* Add */}
         <View style={HomePage.iconGroup}>
@@ -47,7 +49,10 @@ const Home = () => {
           <Text style={HomePage.text}>Info</Text>
         </View>
       </View>
-    </View>
+
+      {/* Bölümler */}
+      <Sections />
+    </ScrollView>
   );
 };
 

@@ -1,24 +1,23 @@
 import {StyleSheet} from 'react-native';
 
 const HomePage = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
+  scrollContainer: {
+    flexGrow: 1,
+    backgroundColor: '#000',
+    padding: 10,
   },
   image: {
-    objectFit: 'contain',
-    width: 400,
+    resizeMode: 'contain',
+    width: '100%',
     height: 500,
-    bottom: 200,
+    marginVertical: 20,
   },
   iconContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    width: '60%',
-    bottom: 120,
+    marginVertical: 10,
+    paddingHorizontal: 20,
   },
   iconGroup: {
     justifyContent: 'center',
@@ -36,8 +35,6 @@ const HomePage = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 7,
     paddingHorizontal: 12,
-    width: 'auto',
-    justifyContent: 'flex-start',
   },
   playicon: {
     color: 'black',
