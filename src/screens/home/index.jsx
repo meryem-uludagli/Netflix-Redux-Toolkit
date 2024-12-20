@@ -16,11 +16,12 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getCategories());
+    dispatch(getTopRatedMovies());
   }, []);
 
   return (
     <ScrollView contentContainerStyle={HomePage.scrollContainer}>
-      {/* Kategoriler */}
+      {/* Categories */}
       <Categories />
 
       {/* Film Afişi */}
@@ -29,7 +30,7 @@ const Home = () => {
         style={HomePage.image}
       />
 
-      {/* İkonlar */}
+      {/* Icons */}
       <View style={HomePage.iconContainer}>
         {/* Add */}
         <View style={HomePage.iconGroup}>
@@ -50,7 +51,7 @@ const Home = () => {
         </View>
       </View>
 
-      {/* Bölümler */}
+      {/* Sections */}
       <Sections />
     </ScrollView>
   );
