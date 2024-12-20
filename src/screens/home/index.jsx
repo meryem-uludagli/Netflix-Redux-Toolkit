@@ -1,9 +1,11 @@
 import {ScrollView, Image, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {
   getCategories,
+  getPopularMovies,
   getTopRatedMovies,
+  getUpcomingMovies,
 } from '../../store/actions/movieActions';
 import {Add, InfoCircle, Play} from 'iconsax-react-native';
 import Categories from '../../widgets/categories';
@@ -11,12 +13,13 @@ import HomePage from '../../styles/homePage';
 import Sections from '../../widgets/sections';
 
 const Home = () => {
-  const {topRatedMovies, categories} = useSelector(state => state.movies);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getTopRatedMovies());
+    dispatch(getPopularMovies());
+    dispatch(getUpcomingMovies());
   }, []);
 
   return (

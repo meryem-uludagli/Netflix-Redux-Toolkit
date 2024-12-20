@@ -23,5 +23,9 @@ const sections = [
     id: 5,
     title: 'New Releases',
   },
+  {
+    id: 6,
+    title: 'Ensemble TV Shows',
+  },
 ];
 export {API_KEY, TOKEN, sections};

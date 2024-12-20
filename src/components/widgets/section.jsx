@@ -5,13 +5,27 @@ import {useSelector} from 'react-redux';
 import MoviesItem from '../movie/moviesItem';
 
 const Section = ({item}) => {
-  const {topRatedMovies} = useSelector(state => state.movies);
+  const {topRatedMovies, popularMovies, upcomingMovies} = useSelector(
+    state => state.movies,
+  );
+  const setData = () => {
+    switch (item.id) {
+      case 1:
+        return popularMovies;
+      case 2:
+        return topRatedMovies;
+      case 3:
+        return upcomingMovies;
+      default:
+        return topRatedMovies;
+    }
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{item.title}</Text>
       <FlatList
         horizontal
-        data={topRatedMovies}
+        data={setData()}
         renderItem={({item}) => <MoviesItem item={item} />}
       />
     </View>
@@ -26,7 +40,9 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.textColor,
-    fontSize: 18,
-    fontWeight: '500',
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginVertical: 10,
+    marginBottom: 20,
   },
 });

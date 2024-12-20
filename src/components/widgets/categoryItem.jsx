@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   },
   name: {
     color: colors.textColor,
-    fontSize: 20,
+    fontSize: 25,
     fontStyle: 'italic',
-    fontWeight: '400',
+    fontWeight: '300',
   },
 });
