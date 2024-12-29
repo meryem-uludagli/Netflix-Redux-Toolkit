@@ -4,6 +4,7 @@ const TOP_RATED_MOVIE_URL = 'movie/top_rated';
 const POPULAR_URL = 'movie/popular';
 const UPCOMING_MOVIE_URL = 'movie/upcoming';
 const CATEGORIES_URL = 'genre/movie/list';
+const MOVIE_URL = 'movie/';
 export {
   BASE_URL,
   TOP_RATED_MOVIE_URL,
@@ -11,4 +12,5 @@ export {
   IMAGE_BASE_URL,
   POPULAR_URL,
   UPCOMING_MOVIE_URL,
+  MOVIE_URL,
 };

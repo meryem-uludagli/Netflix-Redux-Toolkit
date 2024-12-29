@@ -1,6 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {
   getCategories,
+  getMovieData,
   getPopularMovies,
   getTopRatedMovies,
   getUpcomingMovies,
@@ -10,8 +11,10 @@ const initialState = {
   topRatedMovies: [],
   popularMovies: [],
   upcomingMovies: [],
+  movieDetailData: {},
   categories: [],
   pending: false,
+  pendingDetailData: false,
   error: '',
 };
 const moviesSlice = createSlice({
@@ -67,6 +70,18 @@ const moviesSlice = createSlice({
       .addCase(getUpcomingMovies.rejected, (state, action) => {
         state.error = action.error;
         state.pending = false;
+      })
+
+      .addCase(getMovieData.pending, state => {
+        state.pendingDetailData = true;
+      })
+      .addCase(getMovieData.fulfilled, (state, action) => {
+        state.movieDetailData = action.payload;
+        state.pendingDetailData = false;
+      })
+      .addCase(getMovieData.rejected, (state, action) => {
+        state.error = action.error;
+        state.pendingDetailData = false;
       });
   },
 });
