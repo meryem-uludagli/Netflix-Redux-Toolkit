@@ -1,30 +1,41 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 import {colors} from '../theme/colors';
+
+const {width, height} = Dimensions.get('window');
 
 const GetStart = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 0,
-    padding: 0,
     backgroundColor: colors.bgColor,
   },
-
   image: {
-    background: 'black',
-    width: '100%',
-    height: '70%',
+    width: width,
+    height: height * 0.7,
     resizeMode: 'cover',
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: 20,
+    color: colors.textColor,
+    paddingHorizontal: 20,
   },
   subtitle: {
     fontSize: 16,
     textAlign: 'center',
-    marginTop: 5,
+    marginTop: 10,
+    color: colors.textColor,
+    paddingHorizontal: 20,
+  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 30,
+    width: '100%',
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
 });
 

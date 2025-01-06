@@ -32,7 +32,7 @@ const SigninScreen = () => {
       </Text>
 
       <View style={styles.buttonContainer}>
-        <StartButton GETSTARTED={false} />
+        <StartButton GETSTARTED={false} small={true} />
       </View>
     </View>
   );
