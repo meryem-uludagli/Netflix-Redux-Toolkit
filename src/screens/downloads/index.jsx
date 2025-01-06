@@ -6,7 +6,10 @@ const Downloads = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Downloads</Text>
+        <Text style={styles.headerText}>
+          Down<Text style={styles.headerHighlight}>loads</Text>
+        </Text>
+        <View style={styles.headerDot} />
       </View>
 
       <View style={styles.content}>
@@ -45,12 +48,30 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 16,
-    marginTop: 10,
+    marginTop: 40,
+    paddingBottom: 25,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#333',
   },
   headerText: {
     color: colors.textColor,
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 28,
+    fontWeight: '900',
+    letterSpacing: 0.5,
+    textTransform: 'uppercase',
+  },
+  headerHighlight: {
+    color: colors.btnColor,
+    fontStyle: 'italic',
+  },
+  headerDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: colors.btnColor,
+    marginLeft: 8,
   },
   content: {
     flex: 1,
