@@ -6,10 +6,13 @@ const Downloads = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>
-          Down<Text style={styles.headerHighlight}>loads</Text>
-        </Text>
-        <View style={styles.headerDot} />
+        <View style={styles.headerContainer}>
+          <Text style={styles.headerPrefix}>my</Text>
+          <Text style={styles.headerText}>Downloads</Text>
+          <View style={styles.badge}>
+            <Text style={styles.badgeText}>0</Text>
+          </View>
+        </View>
       </View>
 
       <View style={styles.content}>
@@ -50,28 +53,39 @@ const styles = StyleSheet.create({
     padding: 16,
     marginTop: 40,
     paddingBottom: 25,
-    flexDirection: 'row',
-    alignItems: 'center',
     borderBottomWidth: 0.5,
     borderBottomColor: '#333',
   },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerPrefix: {
+    color: colors.btnColor,
+    fontSize: 16,
+    fontWeight: '600',
+    marginRight: 8,
+    opacity: 0.8,
+  },
   headerText: {
     color: colors.textColor,
-    fontSize: 28,
-    fontWeight: '900',
-    letterSpacing: 0.5,
-    textTransform: 'uppercase',
+    fontSize: 32,
+    fontWeight: '800',
+    letterSpacing: -0.5,
   },
-  headerHighlight: {
-    color: colors.btnColor,
-    fontStyle: 'italic',
-  },
-  headerDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
+  badge: {
     backgroundColor: colors.btnColor,
-    marginLeft: 8,
+    borderRadius: 12,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    marginLeft: 12,
+    minWidth: 24,
+    alignItems: 'center',
+  },
+  badgeText: {
+    color: colors.textColor,
+    fontSize: 12,
+    fontWeight: 'bold',
   },
   content: {
     flex: 1,
